@@ -5,25 +5,26 @@ var saveBtn = document.getElementById('save');
 var clearBtn = document.getElementById('clear');
 var myName = document.getElementById('MyName');
 var lis = document.getElementsByTagName('h6');
-
 //addEventListener -  обработчик события с вывовом возвращающей значени функции
 
 myName.onclick = function(){
     alert('Овчинников Дмитрий');
 }
+/*function lineTodo(){
+    for(let i of lis){    
+        i.style.textDecoration = "none";
+    }
+}*/
 function liTodo(){
-    for( let li of lis){
-        li.addEventListener('click', function(){
-    if( li.style.textDecoration == "line-through"){
-        li.style.textDecoration = "none";
-        span.style.textDecoration = "none";
-    }
-    else {
-        li.style.textDecoration = "line-through";
-        span.style.textDecoration = "none";
-    }
-    event.stopPropagation();     // перехват события
-        })
+    for(let i of lis){
+        i.onclick = function(){
+            if( i.style.textDecoration == "line-through"){
+                i.style.textDecoration = "none";
+            }
+            else {
+            i.style.textDecoration = "line-through";
+            }
+        }
     }
 }
 function deleteTodo(){
@@ -40,7 +41,7 @@ function loadTodo(){
         ulSpisok.innerHTML = localStorage.getItem('TodoApp');
     }
     deleteTodo();
-
+    liTodo();
 }
 
 dataInput.addEventListener('keypress', function(keyPressed){
@@ -104,8 +105,9 @@ dataInput.addEventListener('keypress', function(keyPressed){
 
         ulSpisok.appendChild(newLi).append(newSpan, newText, newp);
         }
-    }
-    liTodo();    
+    } 
+
+    liTodo() 
     deleteTodo();
 })
 
@@ -117,8 +119,8 @@ clearBtn.addEventListener('click', function(){
     ulSpisok.innerHTML = ' ';
     localStorage.setItem('TodoApp', ulSpisok.innerHTML);
 });
-
-
+liTodo();
 deleteTodo();
 loadTodo();
-liTodo();
+
+

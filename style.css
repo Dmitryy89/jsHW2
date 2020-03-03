@@ -47,6 +47,7 @@ h6{
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none;
 }
 #MyName{
     position: absolute;
