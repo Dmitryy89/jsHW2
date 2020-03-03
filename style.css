@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+}
+span, h6{
+    cursor: pointer;
+}
+span{
+    padding: 2px 3px;
+    margin-left: 5px;
+    color: red;
+    background-color: rgb(122, 178, 201);
+    border: 1px solid black;
+    margin-right: 10px;
+}
+p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: blue;
+}
+li{
+    width: 100%;
+    background-color: aliceblue;
+    margin: 10px auto;
+    text-align: start;
+    display: block;
+}
+input{
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 2em;
+}
+ul{
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+h6{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: wrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#MyName{
+    position: absolute;
+    left: 22%;    
+}
+#save{
+    margin-bottom: 50px;
+}
